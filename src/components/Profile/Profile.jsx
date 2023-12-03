@@ -1,3 +1,14 @@
+import {
+  StyledCard,
+  StyledDesc,
+  StyledAva,
+  StyledUName,
+  StyledUInfo,
+  StyledStats,
+  StyledStatsItem,
+  StyledNum,
+} from './Profile.styled';
+
 export const Profile = ({
   username,
   tag,
@@ -6,30 +17,28 @@ export const Profile = ({
   stats: { followers, views, likes },
 }) => {
   return (
-    <>
-      <div className="profile">
-        <div className="description">
-          <img src={avatar} alt={username} className="avatar" />
-          <p className="name">{username}</p>
-          <p className="tag">{tag}</p>
-          <p className="location">{location}</p>
-        </div>
+    <StyledCard>
+      <StyledDesc>
+        <StyledAva src={avatar} alt={username} />
+        <StyledUName>{username}</StyledUName>
+        <StyledUInfo>@{tag}</StyledUInfo>
+        <StyledUInfo>{location}</StyledUInfo>
+      </StyledDesc>
 
-        <ul className="stats">
-          <li>
-            <span className="label">Followers</span>
-            <span className="quantity">{followers}</span>
-          </li>
-          <li>
-            <span className="label">Views</span>
-            <span className="quantity">{views}</span>
-          </li>
-          <li>
-            <span className="label">Likes</span>
-            <span className="quantity">{likes}</span>
-          </li>
-        </ul>
-      </div>
-    </>
+      <StyledStats>
+        <StyledStatsItem>
+          <span>Followers</span>
+          <StyledNum>{followers}</StyledNum>
+        </StyledStatsItem>
+        <StyledStatsItem>
+          <span>Views</span>
+          <StyledNum>{views}</StyledNum>
+        </StyledStatsItem>
+        <StyledStatsItem>
+          <span>Likes</span>
+          <StyledNum>{likes}</StyledNum>
+        </StyledStatsItem>
+      </StyledStats>
+    </StyledCard>
   );
 };
