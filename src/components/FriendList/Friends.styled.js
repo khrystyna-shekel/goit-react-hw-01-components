@@ -25,12 +25,14 @@ export const FriendsItem = styled.li`
   }
 `;
 
-export const FriendStatus = styled.span`
+export const FriendStatus = styled(({ isOnline, ...rest }) => (
+  <span {...rest} />
+))`
   display: block;
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background-color: ${props => (props.isOnline ? 'green' : 'red')};
+  background-color: ${friend => (friend.isOnline ? 'green' : 'red')};
 `;
 
 export const FriendName = styled.p`
