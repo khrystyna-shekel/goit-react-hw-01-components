@@ -15,8 +15,6 @@ export const App = () => {
     <div
       style={{
         height: '100vh',
-        justifyContent: 'center',
-        alignItems: 'center',
       }}
     >
       <Profile

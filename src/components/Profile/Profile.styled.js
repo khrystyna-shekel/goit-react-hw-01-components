@@ -10,6 +10,12 @@ export const StyledCard = styled.div`
   max-height: 450px;
   border-radius: 10px;
   box-shadow: 1px 2px 3px 4px lightgray;
+  transition: all 300ms ease;
+
+  &:hover {
+    cursor: pointer;
+    scale: 1.1;
+  }
 `;
 
 export const StyledDesc = styled.div`
